@@ -69,7 +69,7 @@ namespace Iminetsoft
                 /// <summary>
                 /// Creates or updates the specified DNS record
                 /// </summary>
-                /// <returns></returns>
+                /// <returns></returns>              
                 public bool SetDnsRecord()
                 {
                         GetSetDnsRecord(true);
