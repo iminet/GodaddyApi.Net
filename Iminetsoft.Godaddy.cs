@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net;
 using System.IO;
 using System.Text;
@@ -29,9 +29,22 @@ namespace Iminetsoft
                 public string Data { get; set; } = String.Empty;
                 public int Priority { get; set; } = 0;
 
+                public string UserAgent { get; set; } = "Iminetsoft.Godaddy.Net";
+
                 public Dictionary<string, string> ResponseHeaders { get; private set; } = new Dictionary<string, string>();
                 public string ExceptionMessage { private set; get; } = String.Empty;
                 public StatusCodes StatusCode = StatusCodes.EmptyResponse;
+
+                public Godaddy(){ }
+                public Godaddy(string domain, string name, RecordTypes type, int ttl, string key, string secret)
+                {
+                        Domain = (domain.Length > 0 ? domain.Trim() : Domain);
+                        Name = (name.Length > 0 ? name.Trim() : Name);
+                        Type = type;
+                        Ttl = (ttl >= 10 && ttl <=3600 ? ttl : Ttl);
+                        Key = (key.Length > 0 ? key.Trim() : Key);
+                        Secret = (secret.Length > 0 ? secret.Trim() : Secret);
+                }
 
                 /// <summary>
                 /// Gets the current data of the specified domain and DNS record
@@ -71,8 +84,9 @@ namespace Iminetsoft
                         ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                         HttpWebRequest webreq = (HttpWebRequest)System.Net.WebRequest.Create(apiurl);
                         webreq.Headers.Add("Authorization", $"sso-key {Key}:{Secret}");
-                        webreq.Headers.Add("Content-Type", "application/json");
-                        webreq.Headers.Add("accept", "application/json");
+                        webreq.ContentType = "application/json";
+                        webreq.Accept = "application/json";
+                        webreq.UserAgent = UserAgent;
 
                         if (UpdateData == true && RecordToJson().Length > 0)
                         {
