@@ -4,7 +4,7 @@ This is a simple API solution for handling your GoDaddy DNS records
 ## Requirements
 - .NET 4.5 or :NET Core 3.1
 - Newtonsoft Json.NET from [NuGet](https://www.nuget.org/packages/Newtonsoft.Json/)
-- Developer key and secred from [GoDaddy](https://developer.godaddy.com/keys)
+- Developer key and secret from [GoDaddy](https://developer.godaddy.com/keys)
 
 
 ## Usage
