@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+	<AssemblyTitle>This is a simple API solution for handling your GoDaddy DNS records</AssemblyTitle>
+    <AssemblyCompany>Iminetsoft</AssemblyCompany>
+    <AssemblyVersion>1.2.0</AssemblyVersion>
+    <Product>GodaddyApi.Net</Product>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.2.0</Version>
+	<Deterministic>false</Deterministic>
+	<CheckEolTargetFramework>false</CheckEolTargetFramework>
+	<PackageId>Iminetsoft.GodaddyApiNet</PackageId>
+    <PackageProjectUrl>https://github.com/iminet/GodaddyApi.Net</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/iminet/GodaddyApi.Net</RepositoryUrl>
+    <PackageTags>dotnet dns godaddy</PackageTags>
+    <AssemblyVersion>1.2.0</AssemblyVersion>
+    <FileVersion>1.2.0</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+</Project>
